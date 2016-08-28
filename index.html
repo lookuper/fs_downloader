@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+    <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
+    <script>window.$ = window.jQuery = require("./node_modules/jquery/dist/jquery.js");</script>
+    <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script type="text/javascript" src="./node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="./js/customSelect.js"></script>
+    <script type="text/javascript" src="./js/mainController.js"></script>
+
+</head>
+<body>
+    <div ng-app="app2" ng-controller="mainController as main" class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="search-box"
+                     ng-click="clear();"
+                     custom-select="a.title for a in searchAsync($searchTerm)"
+                     ng-model="autocompleteSelectedItem"
+                     custom-select-options="{
+                        'async': true,
+                        'displayText': 'Search...',
+                        'onSelect': level1Options,
+                        'searchDelay': 300
+                    }">
+                    <div class="info-div">
+                        <img class="img-poster" ng-src="http:{{a.poster}}"/>
+                        <span class="info-span">
+                            <span>
+                                {{a.title}}
+                                <span>{{a.year}}</span>
+                            </span>
+                            <span>{{a.genres}}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="alert alert-danger" role="alert" ng-show="error != ''">
+                {{error}}
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <form>
+                        <div ng-repeat="s in seasons" class="radio-toolbar">
+                            <input type="radio" ng-click="selectSeason(s)" id="{{s.name}}" name="radios" value="{{s.name}}">
+                            <label for="{{s.name}}">{{s.name}}</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-xs-6">
+                    <!--<select ng-model="selectedSeason"-->
+                            <!--ng-change="selectSeason(selectedSeason);"-->
+                            <!--ng-options="item.name for item in seasons">-->
+                    <!--</select>-->
+                    <form>
+                        <div ng-repeat="t in translations" class="radio-toolbar">
+                            <input type="radio" ng-click="selectTranslation(t)" id="{{t.name}}" name="radios" value="{{t.name}}">
+                            <label for="{{t.name}}">{{t.name}}</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-xs-6">
+                    <form>
+                        <div ng-repeat="ta in translationsAuthors" class="radio-toolbar">
+                            <input type="radio" ng-click="selectTranslationAuthor(ta);" id="ta{{ta.name}}" name="radios" value="{{ta.name}}">
+                            <label for="ta{{ta.name}}">{{ta.name}}</label>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-xs-6">
+                    <form>
+                        <div ng-repeat="q in videoQuality" class="radio-toolbar">
+                            <input type="radio" ng-click="selectQuality(q);" id="q{{q}}" name="radios" value="{{q}}">
+                            <label for="q{{q}}">{{q}}</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div ng-show="fileList.length != 0">
+                    <button id="download-button" ho ng-click="downloadAll(this);">Download All</button>
+                    <br>
+                    <table class="table table-borderless" id="tb">
+                        <thead>
+                        <tr id="headtr">
+                            <th>File name</th>
+                            <th>Size</th>
+                            <th>Progress</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="bodytr" ng-repeat="f in fileList">
+                            <td>
+                                <div class="tooltip2">
+                                    <a href="{{f.link}}">
+                                        {{f.seiresName}}
+                                        <span class="tooltiptext">{{f.name}}</span>
+                                    </a>
+                                </div>
+
+                            </td>
+                            <td>{{f.size}}</td>
+                            <td> {{f.percentage}} % </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

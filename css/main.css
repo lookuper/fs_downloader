@@ -1,0 +1,192 @@
+@font-face {
+    font-family: CenturyGothicRegular;
+    src: url("stuff/CenturyGothic/CenturyGothicRegular/CenturyGothicRegular.woff");
+}
+
+body {
+    background: url("./stuff/elegant background.png");
+    color: #EAD16A;
+    font-family: CenturyGothicRegular;
+    /*width: 400px;*/
+    /*height: 700px;*/
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.info-div {
+    height: 75px;
+}
+.img-poster {
+    float: left;
+    margin: 2px;
+    /*display: inline-block;*/
+    /*width: 50px;*/
+    /*height: 75px;*/
+    /*background-position: center top;*/
+}
+
+.info-span {
+
+}
+
+.custom-select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    width: 370px;
+    height: 27px;
+
+    font-size: 14px;
+    /*border: none;*/
+    /*background-image: url("./stuff/search.png");*/
+    background-image: url("./stuff/duraka2.png");
+    background-repeat:no-repeat;
+}
+
+.custom-select > a.dropdown-toggle:hover, .custom-select.open > a.dropdown-toggle{
+    color: #EAD16A;
+    background: transparent;
+}
+.custom-select > a.dropdown-toggle > b:before {
+    visibility: hidden;
+}
+.custom-select.open > a.dropdown-toggle {
+    /*background-color: transparent;*/
+}
+.custom-select > a.dropdown-toggle{
+    background-color: transparent;
+    color: #EAD16A;
+    border: none;
+}
+
+.custom-select > .dropdown-menu {
+    background: url("./stuff/elegant background.png");
+}
+
+.custom-select > .dropdown-menu > .custom-select-search {
+    background: url("./stuff/elegant background.png");
+
+}
+
+.custom-select > .dropdown-menu > .custom-select-search > input {
+    background: url("./stuff/elegant background.png");
+
+}
+
+.custom-select > .dropdown-menu > ul {
+    background: url("./stuff/elegant background.png");
+}
+
+.custom-select > .dropdown-menu > ul > li > a {
+    color: #EAD16A;
+}
+
+input[type="radio"] {
+    display:none;
+}
+
+label {
+    display:inline-block;
+    padding-left:30px;
+    height: 21px;
+    margin-top: 5px;
+}
+input[type="radio"] + label {
+    margin-left: 15px;
+    background: url('./stuff/radio button down.png') left center no-repeat;
+
+}
+input[type="radio"]:checked + label {
+    background: url('./stuff/radio dutton up.png') left center no-repeat;
+}
+
+#download-button {
+    margin-top: 14px;
+    background: transparent;
+    border: 10px solid transparent;
+    border-image: url("./stuff/border for CTA.png") 9;
+}
+
+.table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border: none;
+}
+.table-borderless tbody tr {
+    border-bottom: 1px solid #EAD16A;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.error
+{
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip2 .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip2:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+.autocompletedemoCustomTemplate .autocomplete-custom-template li {
+    border-bottom: 1px solid #ccc;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    white-space: normal;
+}
+
+.autocompletedemoCustomTemplate .autocomplete-custom-template li:last-child {
+    border-bottom-width: 0;
+}
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-title,
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-metadata {
+    display: block;
+    line-height: 2;
+}
+
+.autocompletedemoCustomTemplate .autocomplete-custom-template .item-title {
+    height: 18px;
+    width: 18px;
+}
