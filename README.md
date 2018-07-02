@@ -15,4 +15,4 @@ npm run build
 - download all files/one file
 
 ###  Demo:
-![demo] (release/fs_downloader_instruction.gif)
+![demo](https://github.com/lookuper/fs_downloader/blob/master/release/fs_downloader_instruction.gif)
